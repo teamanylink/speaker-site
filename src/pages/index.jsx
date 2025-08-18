@@ -100,6 +100,9 @@ function PagesContent() {
                 <Route path="/frequently-asked-questions" element={<FrequentlyAskedQuestions />} />
                 <Route path="/movement-framework" element={<MovementFramework />} />
                 
+                {/* Catch-all route - redirect to home */}
+                <Route path="*" element={<Home />} />
+                
             </Routes>
         </Layout>
     );

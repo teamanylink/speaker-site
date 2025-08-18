@@ -29,6 +29,8 @@ import StatesSpeakerIndex from "./StatesSpeakerIndex";
 import StateCitySpeakerPage from "./StateCitySpeakerPage";
 
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import BlogIndex from './BlogIndex';
+import BlogPost from './BlogPost';
 
 const PAGES = {
     
@@ -106,6 +108,10 @@ function PagesContent() {
                 <Route path="/about-denis-estimon" element={<AboutDenisEstimon />} />
                 <Route path="/frequently-asked-questions" element={<FrequentlyAskedQuestions />} />
                 <Route path="/movement-framework" element={<MovementFramework />} />
+                
+                {/* Blog */}
+                <Route path="/blog" element={<BlogIndex />} />
+                <Route path="/blog/:slug" element={<BlogPost />} />
                 
                 {/* State Speaker Pages */}
                 <Route path="/speakers-by-state" element={<StatesSpeakerIndex />} />

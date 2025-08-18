@@ -11,6 +11,7 @@ const menuItems = [
     { name: 'About', href: createPageUrl('About') },
     { name: 'Speaking', href: `${createPageUrl('Home')}#speaking` },
     { name: 'Testimonials', href: `${createPageUrl('Home')}#testimonials` },
+    { name: 'Blog', href: '/blog' },
 ]
 
 const Logo = ({ className }) => {

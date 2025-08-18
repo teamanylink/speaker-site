@@ -26,6 +26,7 @@ import MovementFramework from "./MovementFramework";
 // State Pages - full dynamic SEO pages
 import StateSpeakerPage from "./StateSpeakerPage";
 import StatesSpeakerIndex from "./StatesSpeakerIndex";
+import StateCitySpeakerPage from "./StateCitySpeakerPage";
 
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 
@@ -84,6 +85,7 @@ function PagesContent() {
                 <Route path="/Home" element={<Home />} />
                 
                 <Route path="/About" element={<About />} />
+                <Route path="/about" element={<About />} />
                 
                 <Route path="/booking" element={<Booking />} />
                 
@@ -107,6 +109,7 @@ function PagesContent() {
                 {/* State Speaker Pages */}
                 <Route path="/speakers-by-state" element={<StatesSpeakerIndex />} />
                 <Route path="/speaker/:state" element={<StateSpeakerPage />} />
+                <Route path="/speaker/:state/:city" element={<StateCitySpeakerPage />} />
                 
                 {/* Catch-all route - redirect to home */}
                 <Route path="*" element={<Home />} />

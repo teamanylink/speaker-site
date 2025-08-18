@@ -3,6 +3,14 @@ import { statesData } from '../data/states.js';
 export function generateStateSitemap() {
   const baseUrl = 'https://denisestimon.com';
   const currentDate = new Date().toISOString().split('T')[0];
+  const slugify = (value) => (value || '')
+    .toString()
+    .trim()
+    .toLowerCase()
+    .replace(/&/g, ' and ')
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-');
   
   let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -64,6 +72,18 @@ export function generateStateSitemap() {
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>`;
+
+    // City-level pages for each state's major cities
+    (state.majorCities || []).forEach((city) => {
+      const citySlug = slugify(city);
+      sitemap += `
+  <url>
+    <loc>${baseUrl}/speaker/${state.slug}/${citySlug}</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>`;
+    });
   });
 
   sitemap += `
@@ -145,7 +165,7 @@ Sitemap: https://denisestimon.com/sitemap.xml
 # Crawl-delay for respectful crawling
 Crawl-delay: 1
 
-# Allow all major search engines
+# Allow major search engines
 User-agent: Googlebot
 Allow: /
 
@@ -158,9 +178,12 @@ Allow: /
 User-agent: DuckDuckBot
 Allow: /
 
-# Block unnecessary paths
+# Disallow non-public or build directories
 Disallow: /api/
 Disallow: /*.json$
 Disallow: /node_modules/
-Disallow: /src/`;
+Disallow: /src/
+Disallow: /dev/
+Disallow: /tmp/
+`;
 }

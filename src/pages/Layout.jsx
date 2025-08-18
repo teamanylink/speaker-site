@@ -39,7 +39,7 @@ export default function Layout({ children, currentPageName }) {
       <NewHeader />
 
       {/* Main Content */}
-      <main>
+      <main className="pt-20 lg:pt-28">
         {children}
       </main>
     </div>

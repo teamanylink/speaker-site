@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { createPageUrl } from '@/utils'
 import { cn } from '@/lib/utils'
 import { Menu, X } from 'lucide-react'
@@ -28,6 +28,7 @@ export const NewHeader = () => {
     const [menuState, setMenuState] = React.useState(false)
     const [scrolled, setScrolled] = React.useState(false)
     const { scrollYProgress } = useScroll()
+    const location = useLocation()
 
     React.useEffect(() => {
         const unsubscribe = scrollYProgress.on('change', (latest) => {
@@ -35,6 +36,18 @@ export const NewHeader = () => {
         })
         return () => unsubscribe()
     }, [scrollYProgress])
+
+    React.useEffect(() => {
+        setMenuState(false)
+    }, [location.pathname, location.hash])
+
+    React.useEffect(() => {
+        const originalOverflow = document.body.style.overflow
+        document.body.style.overflow = menuState ? 'hidden' : ''
+        return () => {
+            document.body.style.overflow = originalOverflow
+        }
+    }, [menuState])
 
     return (
         <header>
@@ -62,7 +75,8 @@ export const NewHeader = () => {
                             <button
                                 onClick={() => setMenuState(!menuState)}
                                 aria-label={menuState == true ? 'Close Menu' : 'Open Menu'}
-                                className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden">
+                                aria-expanded={menuState}
+                                className={cn("relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden", scrolled ? 'text-gray-700' : 'text-white')}>
                                 <Menu className="group-data-[state=active]:rotate-180 group-data-[state=active]:scale-0 group-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
                                 <X className="group-data-[state=active]:rotate-0 group-data-[state=active]:scale-100 group-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
                             </button>
@@ -73,7 +87,8 @@ export const NewHeader = () => {
                                         <li key={index}>
                                             <Link
                                                 to={item.href}
-                                                className={cn('block duration-150', scrolled ? 'text-gray-700 hover:text-black' : 'text-white/90 hover:text-white')}
+                                                onClick={() => setMenuState(false)}
+                                                className="block duration-150 text-gray-900 hover:text-black"
                                             >
                                                 <span>{item.name}</span>
                                             </Link>
@@ -103,7 +118,7 @@ export const NewHeader = () => {
                                     asChild
                                     className="bg-black text-white rounded-full hover:bg-gray-800"
                                     size="sm">
-                                    <Link to={createPageUrl('booking')}>
+                                    <Link to={createPageUrl('booking')} onClick={() => setMenuState(false)}>
                                         <span>Book Denis</span>
                                     </Link>
                                 </Button>

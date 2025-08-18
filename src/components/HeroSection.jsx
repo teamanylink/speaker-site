@@ -60,7 +60,7 @@ export default function HeroSection() {
                                     size="lg"
                                     variant="ghost"
                                     className="h-12 rounded-full px-5 text-base text-white hover:bg-white/10">
-                                    <Link to="#about">
+                                    <Link to="#framework">
                                         <span className="text-nowrap">Learn More</span>
                                     </Link>
                                 </Button>

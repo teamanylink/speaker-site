@@ -82,8 +82,10 @@ function PagesContent() {
                 
                 
                 <Route path="/Home" element={<Home />} />
+                <Route path="/home" element={<Home />} />
                 
                 <Route path="/About" element={<About />} />
+                <Route path="/about" element={<About />} />
                 
                 <Route path="/booking" element={<Booking />} />
                 

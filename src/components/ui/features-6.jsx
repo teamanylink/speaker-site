@@ -6,7 +6,7 @@ export function Features() {
 
     return (
         <>
-            <section className="py-16 md:py-32">
+            <section id="speaking" className="py-16 md:py-32">
                 <div className="mx-auto max-w-7xl space-y-12 px-6 lg:px-12">
                     <div className="relative z-10 grid items-center gap-4 md:grid-cols-2 md:gap-12">
                         <h2 className="text-4xl font-semibold">Global movement founder, keynote speaker, AI strategist.</h2>

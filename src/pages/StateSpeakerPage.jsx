@@ -16,6 +16,8 @@ import {
   Mail
 } from 'lucide-react';
 import { statesData } from '../data/states';
+import LogoCloud from '../components/LogoCloud';
+import PartnersLogoStrip from '../components/PartnersLogoStrip';
 
 // Create page URL utility inline to avoid import issues
 const createPageUrl = (pageName) => '/' + pageName.toLowerCase().replace(/ /g, '-');
@@ -23,19 +25,31 @@ const createPageUrl = (pageName) => '/' + pageName.toLowerCase().replace(/ /g, '
 export default function StateSpeakerPage() {
   const { state } = useParams();
   const [stateData, setStateData] = useState(null);
+  const [checked, setChecked] = useState(false);
 
   useEffect(() => {
-    const foundState = statesData.find(s => s.slug === state);
-    setStateData(foundState);
+    const slug = (state || "").toLowerCase();
+    const foundState = statesData.find((s) => (s.slug || "").toLowerCase() === slug);
+    setStateData(foundState || null);
+    setChecked(true);
   }, [state]);
 
-  // If state not found, redirect to home
-  if (state && !stateData && statesData.length > 0) {
-    return <Navigate to="/" replace />;
+  // Wait for the lookup to complete before deciding what to render
+  if (!checked) {
+    return null;
   }
 
+  // If, after checking, the state was not found, render a friendly message (avoid redirect loops)
   if (!stateData) {
-    return <div>Loading...</div>;
+    return (
+      <div className="min-h-screen flex items-center justify-center p-10">
+        <div className="max-w-lg text-center">
+          <h1 className="text-2xl font-semibold mb-3">State page not found</h1>
+          <p className="text-gray-600 mb-6">We couldn't find a page for “{state}”. Please select your state from the full list.</p>
+          <a className="underline text-blue-600" href="/speakers-by-state">Browse all states</a>
+        </div>
+      </div>
+    );
   }
 
   const speakingTopics = [
@@ -221,6 +235,12 @@ export default function StateSpeakerPage() {
           </div>
         </section>
 
+        {/* As Seen On / Trusted By */}
+        {/* As Seen On (single instance) */}
+        <LogoCloud />
+        
+        {/* Media coverage section removed to avoid duplicate "As Seen On" */}
+
         {/* State-Specific Context */}
         <section className="py-16 px-6 bg-gray-50">
           <div className="max-w-6xl mx-auto">
@@ -305,6 +325,9 @@ export default function StateSpeakerPage() {
           </div>
         </section>
 
+        {/* Partner organizations near the bottom */}
+        <PartnersLogoStrip />
+
         {/* Speaking Topics */}
         <section className="py-16 px-6">
           <div className="max-w-6xl mx-auto">
@@ -379,49 +402,7 @@ export default function StateSpeakerPage() {
           </div>
         </section>
 
-        {/* Testimonials */}
-        <section className="py-16 px-6">
-          <div className="max-w-6xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-12"
-            >
-              <h2 className="text-4xl font-light mb-6">
-                What <span className="font-medium">Clients Say</span>
-              </h2>
-              <p className="text-xl text-gray-600">
-                Testimonials from organizations across the United States
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {testimonials.map((testimonial, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white rounded-2xl p-6 shadow-lg"
-                >
-                  <div className="flex items-center gap-1 mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                  <p className="text-gray-700 italic mb-4">&ldquo;{testimonial.quote}&rdquo;</p>
-                  <div>
-                    <p className="font-medium text-gray-900">{testimonial.author}</p>
-                    <p className="text-sm text-gray-600">{testimonial.location}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Testimonials section removed per request */}
 
         {/* CTA Section */}
         <section className="py-20 px-6 bg-gradient-to-br from-[#95bbc2] to-[#6b9ca3] text-white">
@@ -455,7 +436,7 @@ export default function StateSpeakerPage() {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="h-12 rounded-full px-8 text-base border-2 border-white text-white hover:bg-white hover:text-gray-900"
+                  className="h-12 rounded-full px-8 text-base border-2 border-white text-white bg-transparent hover:bg-white hover:text-gray-900"
                 >
                   <Link to={createPageUrl('frequently-asked-questions')}>
                     View FAQ

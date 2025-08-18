@@ -19,9 +19,8 @@ export default function TrustedBySection() {
     <div className="w-full bg-white flex flex-col items-center justify-center overflow-hidden">
       <div className="mx-auto pt-32 w-full max-w-5xl px-6 relative z-20">
         <div className="text-center text-3xl text-gray-900 font-light mb-14">
-          <span className="font-medium">
-            As seen on
-          </span>
+          <span className="font-medium">As seen on</span>
+          <p className="text-sm text-gray-500 mt-2">National media coverage and features</p>
         </div>
 
         <div className="relative py-6">

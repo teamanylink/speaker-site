@@ -4,7 +4,7 @@ import Home from "./Home";
 
 import About from "./About";
 
-import booking from "./booking";
+import Booking from "./booking";
 
 // Speaker Pages
 import HighSchoolMotivationalSpeaker from "./HighSchoolMotivationalSpeaker";
@@ -23,9 +23,9 @@ import AboutDenisEstimon from "./AboutDenisEstimon";
 import FrequentlyAskedQuestions from "./FrequentlyAskedQuestions";
 import MovementFramework from "./MovementFramework";
 
-// State Pages - using simple version for testing
-import StateSpeakerPageSimple from "./StateSpeakerPageSimple";
-// import StatesSpeakerIndex from "./StatesSpeakerIndex";
+// State Pages - full dynamic SEO pages
+import StateSpeakerPage from "./StateSpeakerPage";
+import StatesSpeakerIndex from "./StatesSpeakerIndex";
 
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 
@@ -35,7 +35,7 @@ const PAGES = {
     
     About: About,
     
-    booking: booking,
+    booking: Booking,
     
     // Speaker Pages
     'high-school-motivational-speaker': HighSchoolMotivationalSpeaker,
@@ -75,8 +75,8 @@ function PagesContent() {
     // const currentPage = _getCurrentPage(location.pathname);
     
     return (
-        {/* <Layout currentPageName={currentPage}> */}
-            <Routes>            
+        <Layout>
+            <Routes>
                 
                     <Route path="/" element={<Home />} />
                 
@@ -85,7 +85,7 @@ function PagesContent() {
                 
                 <Route path="/About" element={<About />} />
                 
-                <Route path="/booking" element={<booking />} />
+                <Route path="/booking" element={<Booking />} />
                 
                 {/* Speaker Pages */}
                 <Route path="/high-school-motivational-speaker" element={<HighSchoolMotivationalSpeaker />} />
@@ -104,15 +104,15 @@ function PagesContent() {
                 <Route path="/frequently-asked-questions" element={<FrequentlyAskedQuestions />} />
                 <Route path="/movement-framework" element={<MovementFramework />} />
                 
-                {/* State Speaker Pages - testing simple version */}
-                {/* <Route path="/speakers-by-state" element={<StatesSpeakerIndex />} /> */}
-                <Route path="/speaker/:state" element={<StateSpeakerPageSimple />} />
+                {/* State Speaker Pages */}
+                <Route path="/speakers-by-state" element={<StatesSpeakerIndex />} />
+                <Route path="/speaker/:state" element={<StateSpeakerPage />} />
                 
                 {/* Catch-all route - redirect to home */}
                 <Route path="*" element={<Home />} />
                 
             </Routes>
-        {/* </Layout> */}
+        </Layout>
     );
 }
 

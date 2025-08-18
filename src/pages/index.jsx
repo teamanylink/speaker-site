@@ -23,6 +23,10 @@ import AboutDenisEstimon from "./AboutDenisEstimon";
 import FrequentlyAskedQuestions from "./FrequentlyAskedQuestions";
 import MovementFramework from "./MovementFramework";
 
+// State Pages
+import StateSpeakerPage from "./StateSpeakerPage";
+import StatesSpeakerIndex from "./StatesSpeakerIndex";
+
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 
 const PAGES = {
@@ -99,6 +103,10 @@ function PagesContent() {
                 <Route path="/about-denis-estimon" element={<AboutDenisEstimon />} />
                 <Route path="/frequently-asked-questions" element={<FrequentlyAskedQuestions />} />
                 <Route path="/movement-framework" element={<MovementFramework />} />
+                
+                {/* State Speaker Pages */}
+                <Route path="/speakers-by-state" element={<StatesSpeakerIndex />} />
+                <Route path="/speaker/:state" element={<StateSpeakerPage />} />
                 
                 {/* Catch-all route - redirect to home */}
                 <Route path="*" element={<Home />} />

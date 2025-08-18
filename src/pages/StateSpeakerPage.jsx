@@ -18,6 +18,7 @@ import {
 import { statesData } from '../data/states';
 import LogoCloud from '../components/LogoCloud';
 import PartnersLogoStrip from '../components/PartnersLogoStrip';
+import React from 'react';
 
 // Create page URL utility inline to avoid import issues
 const createPageUrl = (pageName) => '/' + pageName.toLowerCase().replace(/ /g, '-');
@@ -397,6 +398,41 @@ export default function StateSpeakerPage() {
                   </div>
                   <h3 className="font-medium text-gray-900">{venue}</h3>
                 </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Cities We Serve - internal links to city pages */}
+        <section className="py-16 px-6">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-4xl font-light mb-6">
+                Cities We Serve in <span className="font-medium">{stateData.name}</span>
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Explore dedicated pages for major cities across {stateData.name}.
+              </p>
+            </motion.div>
+
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {stateData.majorCities.map((city) => (
+                <Link
+                  key={city}
+                  to={`/speaker/${stateData.slug}/${city.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}`}
+                  className="block bg-white rounded-xl p-5 shadow hover:shadow-md transition-shadow border border-gray-100"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-900 font-medium">{city}</span>
+                    <ArrowRight className="w-4 h-4 text-[#95bbc2]" />
+                  </div>
+                </Link>
               ))}
             </div>
           </div>

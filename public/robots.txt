@@ -7,7 +7,7 @@ Sitemap: https://denisestimon.com/sitemap.xml
 # Crawl-delay for respectful crawling
 Crawl-delay: 1
 
-# Allow all major search engines
+# Allow major search engines
 User-agent: Googlebot
 Allow: /
 
@@ -20,8 +20,10 @@ Allow: /
 User-agent: DuckDuckBot
 Allow: /
 
-# Block unnecessary paths
+# Disallow non-public or build directories
 Disallow: /api/
 Disallow: /*.json$
 Disallow: /node_modules/
 Disallow: /src/
+Disallow: /dev/
+Disallow: /tmp/

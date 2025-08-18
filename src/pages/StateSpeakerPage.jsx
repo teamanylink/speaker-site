@@ -4,7 +4,6 @@ import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Button } from '../components/ui/button';
 import { Link } from 'react-router-dom';
-import { createPageUrl } from '../utils';
 import { 
   MapPin, 
   Users, 
@@ -17,6 +16,9 @@ import {
   Mail
 } from 'lucide-react';
 import { statesData } from '../data/states';
+
+// Create page URL utility inline to avoid import issues
+const createPageUrl = (pageName) => '/' + pageName.toLowerCase().replace(/ /g, '-');
 
 export default function StateSpeakerPage() {
   const { state } = useParams();
@@ -233,7 +235,7 @@ export default function StateSpeakerPage() {
                 Understanding <span className="font-medium">{stateData.name}</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Denis brings deep understanding of {stateData.name}'s unique challenges and opportunities to every speaking engagement.
+                Denis brings deep understanding of {stateData.name}&apos;s unique challenges and opportunities to every speaking engagement.
               </p>
             </motion.div>
 
@@ -410,7 +412,7 @@ export default function StateSpeakerPage() {
                       <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                     ))}
                   </div>
-                  <p className="text-gray-700 italic mb-4">"{testimonial.quote}"</p>
+                  <p className="text-gray-700 italic mb-4">&ldquo;{testimonial.quote}&rdquo;</p>
                   <div>
                     <p className="font-medium text-gray-900">{testimonial.author}</p>
                     <p className="text-sm text-gray-600">{testimonial.location}</p>

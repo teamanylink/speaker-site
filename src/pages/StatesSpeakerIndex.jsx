@@ -106,7 +106,7 @@ export default function StatesSpeakerIndex() {
                 Choose Your <span className="font-medium">State</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Click on any state to learn about Denis's speaking services in your area, including local challenges addressed and venue options.
+                Click on any state to learn about Denis&apos;s speaking services in your area, including local challenges addressed and venue options.
               </p>
             </motion.div>
 
@@ -185,7 +185,7 @@ export default function StatesSpeakerIndex() {
                 Ready to Transform Your <span className="font-medium">Community</span>?
               </h2>
               <p className="text-xl mb-8 opacity-90">
-                No matter where you're located in America, Denis Estimon can bring the Movement Framework™ to your organization.
+                No matter where you&apos;re located in America, Denis Estimon can bring the Movement Framework™ to your organization.
               </p>
               
               <Link

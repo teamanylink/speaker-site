@@ -23,9 +23,9 @@ import AboutDenisEstimon from "./AboutDenisEstimon";
 import FrequentlyAskedQuestions from "./FrequentlyAskedQuestions";
 import MovementFramework from "./MovementFramework";
 
-// State Pages
-import StateSpeakerPage from "./StateSpeakerPage";
-import StatesSpeakerIndex from "./StatesSpeakerIndex";
+// State Pages - using simple version for testing
+import StateSpeakerPageSimple from "./StateSpeakerPageSimple";
+// import StatesSpeakerIndex from "./StatesSpeakerIndex";
 
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 
@@ -71,11 +71,11 @@ function _getCurrentPage(url) {
 
 // Create a wrapper component that uses useLocation inside the Router context
 function PagesContent() {
-    const location = useLocation();
-    const currentPage = _getCurrentPage(location.pathname);
+    // const location = useLocation();
+    // const currentPage = _getCurrentPage(location.pathname);
     
     return (
-        <Layout currentPageName={currentPage}>
+        {/* <Layout currentPageName={currentPage}> */}
             <Routes>            
                 
                     <Route path="/" element={<Home />} />
@@ -104,15 +104,15 @@ function PagesContent() {
                 <Route path="/frequently-asked-questions" element={<FrequentlyAskedQuestions />} />
                 <Route path="/movement-framework" element={<MovementFramework />} />
                 
-                {/* State Speaker Pages */}
-                <Route path="/speakers-by-state" element={<StatesSpeakerIndex />} />
-                <Route path="/speaker/:state" element={<StateSpeakerPage />} />
+                {/* State Speaker Pages - testing simple version */}
+                {/* <Route path="/speakers-by-state" element={<StatesSpeakerIndex />} /> */}
+                <Route path="/speaker/:state" element={<StateSpeakerPageSimple />} />
                 
                 {/* Catch-all route - redirect to home */}
                 <Route path="*" element={<Home />} />
                 
             </Routes>
-        </Layout>
+        {/* </Layout> */}
     );
 }
 

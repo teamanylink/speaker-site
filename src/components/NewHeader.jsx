@@ -3,24 +3,44 @@ import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { createPageUrl } from '@/utils'
 import { cn } from '@/lib/utils'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, ChevronDown } from 'lucide-react'
 import { useScroll, motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu'
 
 const menuItems = [
     { name: 'About', href: createPageUrl('About') },
     { name: 'Speaking', href: `${createPageUrl('Home')}#speaking` },
     { name: 'Testimonials', href: `${createPageUrl('Home')}#testimonials` },
-    { name: 'Blog', href: '/blog' },
+]
+
+const industryItems = [
+    { name: 'Corporate Leadership', href: createPageUrl('corporate-leadership-training-speaker') },
+    { name: 'High School', href: createPageUrl('high-school-motivational-speaker') },
+    { name: 'College & University', href: createPageUrl('college-keynote-speaker') },
+    { name: 'Anti-Bullying Programs', href: createPageUrl('anti-bullying-speaker-schools') },
+    { name: 'Student Assemblies', href: createPageUrl('student-assembly-speaker') },
+    { name: 'Diversity & Inclusion', href: createPageUrl('diversity-inclusion-speaker') },
+    { name: 'Graduation Ceremonies', href: createPageUrl('graduation-commencement-speaker') },
+    { name: 'Mental Health & Teens', href: createPageUrl('mental-health-speaker-teens') },
+    { name: 'Personal Branding', href: createPageUrl('personal-branding-speaker-students') },
 ]
 
 const Logo = ({ className }) => {
     return (
         <div
-            className={cn("w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer select-none text-xs font-semibold tracking-wide", className)}
-            style={{ backgroundColor: '#000', color: '#fff' }}
+            className={cn("w-10 h-10 flex items-center justify-center cursor-pointer select-none", className)}
         >
-            <span>DE</span>
+            <img 
+                src="/assets/de-icon.png" 
+                alt="Denis Estimon Logo" 
+                className="w-full h-full object-contain"
+            />
         </div>
     )
 }
@@ -95,6 +115,27 @@ export const NewHeader = () => {
                                             </Link>
                                         </li>
                                     ))}
+                                    <li>
+                                        <DropdownMenu>
+                                            <DropdownMenuTrigger className="flex items-center gap-1 duration-150 text-gray-900 hover:text-black">
+                                                <span>By Industry</span>
+                                                <ChevronDown className="w-4 h-4" />
+                                            </DropdownMenuTrigger>
+                                            <DropdownMenuContent className="w-56">
+                                                {industryItems.map((item, index) => (
+                                                    <DropdownMenuItem key={index} asChild>
+                                                        <Link
+                                                            to={item.href}
+                                                            onClick={() => setMenuState(false)}
+                                                            className="w-full"
+                                                        >
+                                                            {item.name}
+                                                        </Link>
+                                                    </DropdownMenuItem>
+                                                ))}
+                                            </DropdownMenuContent>
+                                        </DropdownMenu>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -112,6 +153,25 @@ export const NewHeader = () => {
                                             </Link>
                                         </li>
                                     ))}
+                                    <li>
+                                        <div className="space-y-3">
+                                            <span className={cn('block font-medium', scrolled ? 'text-gray-700' : 'text-white/90')}>
+                                                By Industry
+                                            </span>
+                                            <ul className="space-y-3 pl-4">
+                                                {industryItems.map((item, index) => (
+                                                    <li key={index}>
+                                                        <Link
+                                                            to={item.href}
+                                                            className={cn('block duration-150 text-sm', scrolled ? 'text-gray-600 hover:text-black' : 'text-white/70 hover:text-white')}
+                                                        >
+                                                            {item.name}
+                                                        </Link>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    </li>
                                 </ul>
                             </div>
                             <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">

@@ -1,0 +1,19 @@
+QUICK REFERENCE - Save your Twitter screenshots with these exact names:
+
+📁 Save all files to: /public/assets/testimonials/
+
+1️⃣  ian-bohen-tweet.png          → Ian Bohen: "Denis Estimon, you're my kind of hero..."
+2️⃣  nas-post.png                 → NAS: "Props to Denis Estimon"  
+3️⃣  tobias-harris-tweet.png      → Tobias Harris: "@Denis_Estimon well done brother!"
+4️⃣  3musketeers-tweet.png        → 3 Musketeers #BeMore campaign (bow tie photo)
+5️⃣  boca-voice-tweet.png         → The Boca Voice: "Boca Raton Local Recruited..."
+6️⃣  dr-champagnie-tweet.png      → Dr. Champagnie: "Denis Estimon spreads the message..."
+7️⃣  palm-beach-schools-tweet.png → Palm Beach County School District tweet
+8️⃣  balancing-act-post2.png      → Balancing Act: Video with Denis speaking  
+9️⃣  pam-pettengell-post.png      → Pam Pettengell: Agents of Change conference
+
+✅ All filenames are lowercase
+✅ Use hyphens (not spaces or underscores)  
+✅ Save as PNG format
+✅ Make sure text is readable in screenshots
+

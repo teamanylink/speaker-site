@@ -2,66 +2,59 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { TestimonialsColumn } from './ui/TestimonialsColumn';
 
+// Twitter screenshot testimonials with different heights for masonry effect
 const testimonials = [
   {
-    text: "The most relevant, actionable, and inspiring talk we've had in years.",
-    image: "https://randomuser.me/api/portraits/women/1.jpg",
-    name: "Briana Patton",
-    role: "Director of Student Affairs, State University",
+    image: "/assets/testimonials/ian-bohen-tweet.png",
+    alt: "Ian Bohen praising Denis Estimon on Twitter",
+    height: "medium" // Approximately 300-400px
   },
   {
-    text: "Our students walked out ready to take on the world — and they haven't stopped talking about it.",
-    image: "https://randomuser.me/api/portraits/men/2.jpg",
-    name: "Bilal Ahmed",
-    role: "Dean of Students, Community College",
+    image: "/assets/testimonials/nas-post.png",
+    alt: "NAS giving props to Denis Estimon",
+    height: "small" // Approximately 200-250px
   },
   {
-    text: "Denis's framework was a game-changer. Our students are now building their future with confidence.",
-    image: "https://randomuser.me/api/portraits/women/3.jpg",
-    name: "Saman Malik",
-    role: "Career Services Coordinator",
+    image: "/assets/testimonials/tobias-harris-tweet.png",
+    alt: "Tobias Harris endorsement of Denis Estimon",
+    height: "small"
   },
   {
-    text: "The session seamlessly integrated with our leadership program, enhancing its impact significantly.",
-    image: "https://randomuser.me/api/portraits/men/4.jpg",
-    name: "Omar Raza",
-    role: "VP of Student Life",
+    image: "/assets/testimonials/3musketeers-tweet.png",
+    alt: "3 Musketeers tweet about Denis Estimon and BeMore campaign",
+    height: "large" // Approximately 500-700px with image
   },
   {
-    text: "His energy is contagious. He connected with our students on a level we've rarely seen from a speaker.",
-    image: "https://randomuser.me/api/portraits/women/5.jpg",
-    name: "Zainab Hussain",
-    role: "Event Organizer, Tech Conference",
+    image: "/assets/testimonials/boca-voice-tweet.png",
+    alt: "The Boca Voice article about Denis Estimon",
+    height: "small"
   },
   {
-    text: "The actionable steps he provided made it easy for students to start immediately. A truly transformative experience.",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
-    name: "Aliza Khan",
-    role: "Leadership Program Manager",
+    image: "/assets/testimonials/dr-champagnie-tweet.png",
+    alt: "Dr. Althea Champagnie tweet about Denis Estimon",
+    height: "medium"
   },
   {
-    text: "He doesn't just motivate; he equips. Our students left with a tangible plan for their future.",
-    image: "https://randomuser.me/api/portraits/men/7.jpg",
-    name: "Farhan Siddiqui",
-    role: "University Chancellor",
+    image: "/assets/testimonials/palm-beach-schools-tweet.png",
+    alt: "Palm Beach County Schools praising Denis Estimon",
+    height: "medium"
   },
   {
-    text: "One of the best investments we've made for our student body. The feedback has been overwhelmingly positive.",
-    image: "https://randomuser.me/api/portraits/women/8.jpg",
-    name: "Sana Sheikh",
-    role: "Head of University Events",
+    image: "/assets/testimonials/balancing-act-post2.png",
+    alt: "The Balancing Act video featuring Denis Estimon",
+    height: "large"
   },
   {
-    text: "Denis has a unique gift for turning complex topics like AI and the future of work into inspiring, understandable concepts.",
-    image: "https://randomuser.me/api/portraits/men/9.jpg",
-    name: "Hassan Ali",
-    role: "Professor of Entrepreneurship",
+    image: "/assets/testimonials/pam-pettengell-post.png",
+    alt: "Pam Pettengell post about Agents of Change conference with Denis Estimon",
+    height: "large"
   },
 ];
 
-const firstColumn = testimonials.slice(0, 3);
-const secondColumn = testimonials.slice(3, 6);
-const thirdColumn = testimonials.slice(6, 9);
+// Distribute testimonials across columns for masonry effect
+const firstColumn = [testimonials[0], testimonials[3], testimonials[6]];
+const secondColumn = [testimonials[1], testimonials[4], testimonials[7]];
+const thirdColumn = [testimonials[2], testimonials[5], testimonials[8]];
 
 export default function SocialProofSection() {
   return (
@@ -75,10 +68,10 @@ export default function SocialProofSection() {
           className="flex flex-col items-center justify-center max-w-2xl mx-auto text-center"
         >
           <h2 className="text-4xl md:text-5xl font-light leading-tight mb-6">
-            What <span className="font-medium">audiences</span> are saying
+            What <span className="font-medium">people</span> are saying
           </h2>
           <p className="text-center mt-5 text-xl text-gray-600 leading-relaxed">
-            Don't just take my word for it. See what event organizers and university staff have to say about the impact of my talks.
+            From celebrities to educators, see the real impact of the movement.
           </p>
         </motion.div>
 

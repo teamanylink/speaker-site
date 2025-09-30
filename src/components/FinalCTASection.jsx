@@ -1,14 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mic, Briefcase, Mail } from 'lucide-react';
+import { Mic } from 'lucide-react';
 import { createPageUrl } from '@/utils';
 
 export default function FinalCTASection() {
-  const ctaItems = [
-    { icon: Mic, text: "Book Me to Speak", href: createPageUrl('booking') },
-    { icon: Briefcase, text: "Consulting & Strategy", href: "#" },
-    { icon: Mail, text: "Join the Newsletter", href: "#" }
-  ];
 
   return (
     <section id="contact" className="py-32 px-6 bg-gradient-to-b from-gray-50/30 to-white">
@@ -31,38 +26,38 @@ export default function FinalCTASection() {
             You don’t have to chase momentum. You just need to become it.
           </p>
 
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
-            {ctaItems.map((item, index) => (
-              <motion.a
-                key={index}
-                href={item.href}
-                className="flex items-center justify-center gap-3 w-full sm:w-auto bg-black text-white px-8 py-4 rounded-full text-lg font-medium shadow-2xl hover:shadow-3xl transition-all duration-500 group"
-                whileHover={{ 
-                  scale: 1.05,
-                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
-                  backgroundColor: '#95bbc2'
-                }}
-                whileTap={{ scale: 0.98 }}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 + index * 0.15 }}
-              >
-                <item.icon className="w-5 h-5 transition-transform duration-300 group-hover:-rotate-12" />
-                <span>{item.text}</span>
-              </motion.a>
-            ))}
-          </div>
+          <motion.a
+            href={createPageUrl('booking')}
+            className="inline-flex items-center justify-center gap-3 bg-black text-white px-8 py-4 rounded-full text-lg font-medium shadow-2xl hover:shadow-3xl transition-all duration-500 group"
+            whileHover={{ 
+              scale: 1.05,
+              boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+              backgroundColor: '#95bbc2'
+            }}
+            whileTap={{ scale: 0.98 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            <Mic className="w-5 h-5 transition-transform duration-300 group-hover:-rotate-12" />
+            <span>Book Me to Speak</span>
+          </motion.a>
 
-          <motion.p 
-            className="text-lg font-medium text-gray-800 mt-16"
+          <motion.div
+            className="mt-16"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.6 }}
           >
-            Let’s move.
-          </motion.p>
+            <p className="text-lg font-medium text-gray-800 mb-4">
+              Let's move.
+            </p>
+            <p className="text-base text-gray-600">
+              Email: <a href="mailto:booking@movementleader.com" className="text-[#95bbc2] hover:underline">booking@movementleader.com</a>
+            </p>
+          </motion.div>
         </motion.div>
       </div>
     </section>

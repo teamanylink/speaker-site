@@ -22,25 +22,24 @@ export const TestimonialsColumn = ({
       >
         {[...new Array(2).fill(0)].map((_, index) => (
           <React.Fragment key={index}>
-            {testimonials.map(({ text, image, name, role }, i) => (
+            {testimonials.map(({ image, alt, height }, i) => (
               <div 
-                className="p-10 rounded-3xl border border-gray-100 shadow-xl bg-white max-w-xs w-full" 
+                className={`
+                  rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl 
+                  transition-all duration-300 w-full max-w-sm
+                  border border-gray-200 bg-white
+                  ${height === 'small' ? 'max-h-[250px]' : ''}
+                  ${height === 'medium' ? 'max-h-[400px]' : ''}
+                  ${height === 'large' ? 'max-h-[700px]' : ''}
+                `}
                 key={i}
               >
-                <div className="text-lg leading-relaxed text-gray-700">{text}</div>
-                <div className="flex items-center gap-4 mt-6 pt-6 border-t border-gray-100">
-                  <img
-                    width={40}
-                    height={40}
-                    src={image}
-                    alt={name}
-                    className="h-10 w-10 rounded-full object-cover"
-                  />
-                  <div className="flex flex-col">
-                    <div className="font-semibold tracking-tight leading-5 text-black">{name}</div>
-                    <div className="leading-5 text-gray-500 tracking-tight text-sm">{role}</div>
-                  </div>
-                </div>
+                <img
+                  src={image}
+                  alt={alt}
+                  className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
               </div>
             ))}
           </React.Fragment>

@@ -126,7 +126,7 @@ export default function Booking() {
     setAlertState({
       isOpen: true,
       title: "Thank You!",
-      message: `Your booking request has been submitted.\n\nWhat to expect next:\n1. We'll review your request and check date availability within 24 hours\n2. If the date is available, we'll reach out to schedule an initial kickoff call\n3. During the call, we'll discuss event details and confirm the speaking fee\n4. To secure your event date, we'll need 50% of the agreed fee as a deposit\n5. We'll send you a formal agreement with all event details\n6. Then we'll work together to ensure everything is ready for your event\n\nWe're excited about the possibility of bringing Denis to your campus!`
+      message: `Your booking request has been submitted.\n\nWhat to expect next:\n1. We'll review your request and check date availability within 24 hours\n2. If the date is available, we'll reach out to schedule an initial kickoff call\n3. During the call, we'll discuss event details and confirm the speaking fee\n4. To secure your event date, we'll need 50% of the agreed fee as a deposit\n5. We'll send you a formal agreement with all event details\n6. Then we'll work together to ensure everything is ready for your event\n\nWe're excited about the possibility of bringing Denis to your organization!`
     });
   };
 
@@ -197,10 +197,10 @@ export default function Booking() {
             >
               <motion.div variants={itemVariants}>
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light leading-tight mb-4 sm:mb-6">
-                  Book <span className="font-medium" style={{ color: '#95bbc2' }}>Denis</span> for Your Campus
+                  Book <span className="font-medium" style={{ color: '#95bbc2' }}>Denis</span> for Your Event
                 </h1>
                 <p className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-6 sm:mb-8">
-                  Transform your students' uncertainty into unstoppable momentum. Let's discuss how The Movement Framework can impact your campus.
+                  Transform uncertainty into unstoppable momentum. Let's discover how the Movement Framework in Denis's core leadership teachings can impact your organization.
                 </p>
               </motion.div>
 
@@ -224,7 +224,7 @@ export default function Booking() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-base sm:text-lg mb-1 sm:mb-2">Tailored Experience</h3>
-                    <p className="text-sm sm:text-base text-gray-600">Every presentation is customized for your specific campus and student body.</p>
+                    <p className="text-sm sm:text-base text-gray-600">Every presentation is customized for your specific organization and audience.</p>
                   </div>
                 </div>
 
@@ -360,7 +360,7 @@ export default function Booking() {
                             value={formData.email}
                             onChange={handleInputChange}
                             className={`w-full pl-11 pr-4 py-3 border rounded-xl focus:ring-2 focus:border-transparent transition-all ${errors.email ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 focus:ring-blue-500'}`}
-                            placeholder="you@university.edu"
+                            placeholder="you@organization.com"
                           />
                         </div>
                         {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
@@ -408,7 +408,7 @@ export default function Booking() {
                             value={formData.organizationName}
                             onChange={handleInputChange}
                             className={`w-full pl-11 pr-4 py-3 border rounded-xl focus:ring-2 focus:border-transparent transition-all ${errors.organizationName ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 focus:ring-blue-500'}`}
-                            placeholder="University of..."
+                            placeholder="Your Organization Name"
                           />
                         </div>
                         {errors.organizationName && <p className="text-red-500 text-sm mt-1">{errors.organizationName}</p>}
@@ -424,7 +424,7 @@ export default function Booking() {
                           value={formData.position}
                           onChange={handleInputChange}
                           className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                          placeholder="Director of Student Affairs"
+                          placeholder="Your Position/Title"
                         />
                       </div>
 
@@ -440,7 +440,7 @@ export default function Booking() {
                             value={formData.websiteUrl}
                             onChange={handleInputChange}
                             className="w-full pl-11 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                            placeholder="https://university.edu"
+                            placeholder="https://yourorganization.com"
                           />
                         </div>
                       </div>
@@ -509,11 +509,11 @@ export default function Booking() {
                               className={`w-full pl-11 pr-4 py-3 border rounded-xl focus:ring-2 focus:border-transparent transition-all ${errors.audienceSize ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 focus:ring-blue-500'}`}
                             >
                               <option value="">Select size</option>
-                              <option value="50-100">50-100 students</option>
-                              <option value="100-250">100-250 students</option>
-                              <option value="250-500">250-500 students</option>
-                              <option value="500-1000">500-1000 students</option>
-                              <option value="1000+">1000+ students</option>
+                              <option value="50-100">50-100 attendees</option>
+                              <option value="100-250">100-250 attendees</option>
+                              <option value="250-500">250-500 attendees</option>
+                              <option value="500-1000">500-1000 attendees</option>
+                              <option value="1000+">1000+ attendees</option>
                             </select>
                           </div>
                           {errors.audienceSize && <p className="text-red-500 text-sm mt-1">{errors.audienceSize}</p>}
@@ -552,7 +552,7 @@ export default function Booking() {
                             <option value="">Select event type</option>
                             <option value="keynote">Keynote Speech (45-60 min)</option>
                             <option value="workshop">Interactive Workshop (90-120 min)</option>
-                            <option value="training">Student Leader Training (60-90 min)</option>
+                            <option value="training">Leadership Training (60-90 min)</option>
                             <option value="virtual">Virtual Presentation</option>
                             <option value="custom">Custom Format</option>
                           </select>

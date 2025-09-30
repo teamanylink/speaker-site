@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { createPageUrl } from '@/utils';
 
 export default function HeroAboutSection() {
   return (
@@ -31,9 +33,9 @@ export default function HeroAboutSection() {
                 Who is Denis Estimon
               </h1>
               <p className="max-w-4xl mx-auto text-xl md:text-2xl lg:text-3xl text-white/90 mb-12 leading-relaxed font-light">
-                In less than a decade, Denis Estimon has launched movements that reached millions, 
-                collaborated with Fortune 500 companies, and developed frameworks that 
-                transform how people see their potential.
+                I help you become the movement you were created to be. 
+                From co-founding We Dine Together to building Movement Leader, I teach you how to confront conflict, 
+                cultivate connections, and create community that transforms your life and the lives of those around you.
               </p>
 
               {/* CTA */}
@@ -43,12 +45,18 @@ export default function HeroAboutSection() {
                 transition={{ duration: 0.8, delay: 0.3 }}
                 className="flex flex-col sm:flex-row gap-6 justify-center items-center"
               >
-                <button className="bg-white text-black px-10 py-5 rounded-2xl font-semibold text-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                  Discover My Story
-                </button>
-                <button className="bg-white/20 backdrop-blur-md border border-white/30 text-white px-10 py-5 rounded-2xl font-semibold text-xl hover:bg-white/30 transition-all duration-300">
+                <Link 
+                  to={createPageUrl('booking')}
+                  className="bg-white text-black px-10 py-5 rounded-2xl font-semibold text-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                >
+                  Book Denis to Speak
+                </Link>
+                <Link 
+                  to={createPageUrl('movement-framework')}
+                  className="bg-white/20 backdrop-blur-md border border-white/30 text-white px-10 py-5 rounded-2xl font-semibold text-xl hover:bg-white/30 transition-all duration-300"
+                >
                   The Movement Framework
-                </button>
+                </Link>
               </motion.div>
             </motion.div>
           </div>

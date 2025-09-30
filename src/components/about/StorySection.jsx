@@ -5,18 +5,18 @@ import { Users, Globe, Award } from 'lucide-react';
 
 export default function StorySection() {
   const achievements = [
-    { icon: Users, title: "Global Movement Builder", description: "Launched a worldwide movement that reached millions, starting from a simple idea to fight loneliness." },
-    { icon: Globe, title: "Fortune 500 Collaborator", description: "Worked and collaborated with major corporations, bringing movement principles to organizational transformation." },
-    { icon: Award, title: "Movement Framework Creator", description: "Developed the Movement Framework to help individuals become the movements they were created to be." }
+    { icon: Users, title: "Global Reach", description: "I've reached millions of people globally through my work, from high school initiatives to major national platforms." },
+    { icon: Globe, title: "Major Media Coverage", description: "Featured on major national news outlets and commercials during Super Bowl and Winter Olympics-sized stages." },
+    { icon: Award, title: "Notable Mentions", description: "My work has been quoted by the nation's top professionals, including U.S. Surgeon General Vivek Murthy's book 'Together' and John C. Maxwell's book 'Change Your World'." }
   ];
 
   return (
     <section className="py-24 sm:py-32 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-5xl font-light tracking-tight text-gray-900 mb-4">From Language Barriers to Global Impact</h2>
+          <h2 className="text-3xl md:text-5xl font-light tracking-tight text-gray-900 mb-4">From High School Initiative to Global Movement</h2>
           <p className="text-lg text-gray-600 leading-relaxed font-light">
-            Coming to America as an immigrant who couldn't speak the language, Denis discovered that the greatest barriers aren't external—they're internal. Through developing the Movement Framework, he learned how to help individuals unlock their potential and become the movements they were created to be.
+            When I co-founded We Dine Together at my high school, I didn't realize I was starting a global movement. Over time, I discovered that the biggest barrier to becoming a movement leader isn't external—it's the false beliefs, stories, and identities you hold onto. Through confronting conflict and stepping outside my comfort zone, I cultivated connections and increased my influence, becoming the movement I was created to be. Now I help you do the same.
           </p>
         </div>
         <div className="grid lg:grid-cols-5 gap-10 items-center">

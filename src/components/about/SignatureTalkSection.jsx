@@ -7,8 +7,8 @@ import { createPageUrl } from '@/utils';
 export default function SignatureTalkSection() {
   const talkFeatures = [
     { icon: Clock, title: "45-90 Minutes", description: "Flexible format to fit your event schedule" },
-    { icon: Users, title: "Interactive Experience", description: "Students leave with actionable next steps" },
-    { icon: Target, title: "Customized Content", description: "Tailored to your campus and student needs" }
+    { icon: Users, title: "Interactive Experience", description: "Audience leaves with actionable next steps" },
+    { icon: Target, title: "Customized Content", description: "Tailored to your organization and audience needs" }
   ];
 
   return (
@@ -16,10 +16,10 @@ export default function SignatureTalkSection() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-light tracking-tight text-gray-900 mb-4">
-            The Movement Framework: <span style={{ color: '#95bbc2' }} className="font-medium">Denis's Signature Talk</span>
+            <span style={{ color: '#95bbc2' }} className="font-medium">How to Become a Movement</span>: Denis's Signature Talk
           </h2>
           <p className="text-lg text-gray-600 leading-relaxed font-light">
-            A proven system that transforms AI anxiety into actionable confidence. Students don't just get motivated—they get equipped with a clear roadmap for their future.
+            A proven system that transforms your uncertainty into unstoppable momentum. You don't just get motivated—you get equipped with the framework to become the movement you were created to be.
           </p>
         </div>
 

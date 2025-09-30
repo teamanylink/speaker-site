@@ -4,18 +4,18 @@ import { Brain, Zap, Users } from 'lucide-react';
 
 export default function WhyItMattersSection() {
   const concerns = [
-    { icon: Brain, question: "Will my major still matter in five years?" },
-    { icon: Zap, question: "How do I stand out if AI can do my work?" },
-    { icon: Users, question: "How do I build real relationships in a digital world?" }
+    { icon: Brain, question: "How do I navigate the AI revolution without losing my identity?" },
+    { icon: Zap, question: "What does it mean to be human in an increasingly digital world?" },
+    { icon: Users, question: "How do I build authentic connections when social media affects our loneliness?" }
   ];
 
   return (
     <section className="py-24 sm:py-32 px-6 bg-black text-white relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(149,187,194,0.1),transparent_70%)]"></div>
       <div className="max-w-4xl mx-auto text-center relative z-10">
-        <h2 className="text-3xl md:text-5xl font-light tracking-tight mb-6">Why This Matters For Students Today</h2>
+        <h2 className="text-3xl md:text-5xl font-light tracking-tight mb-6">Why This Matters Today</h2>
         <p className="text-lg md:text-xl text-gray-300 leading-relaxed font-light mb-16">
-          The world is changing faster than ever. AI is rewriting the rules for school and work, and students are asking tough questions.
+          The world is changing faster than ever. Whether it's the rise of artificial intelligence affecting your identity and social anxiety, or the impact of social media on your loneliness, you're asking fundamental questions about what it means to be human.
         </p>
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {concerns.map((concern, index) => (
@@ -35,7 +35,7 @@ export default function WhyItMattersSection() {
           ))}
         </div>
         <p className="text-xl md:text-2xl leading-relaxed font-light">
-          Denis's work helps students stay <span className="font-medium text-white">human first</span>—rooted, clear, and courageous—no matter how fast the tech moves.
+          My work helps you stay <span className="font-medium text-white">human first</span>—rooted, clear, and courageous—while navigating the complexities of our rapidly changing world.
         </p>
       </div>
     </section>

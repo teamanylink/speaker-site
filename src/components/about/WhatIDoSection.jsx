@@ -5,18 +5,18 @@ import { Shield, Users, TrendingUp } from 'lucide-react';
 
 export default function WhatIDoSection() {
   const principles = [
-    { icon: Shield, title: "Anchor in Identity", description: "Denis teaches students to ground themselves in their values before adopting new tools like AI." },
-    { icon: Users, title: "Build Real Community", description: "He provides frameworks for fostering genuine human connections, a skill more valuable than ever in a digital-first world." },
-    { icon: TrendingUp, title: "Create Momentum", description: "He shows them how to make simple, steady moves that build the unstoppable confidence needed to navigate an unpredictable career path." }
+    { icon: Shield, title: "Confront Conflict", description: "I teach you to step outside your comfort zone and face the false beliefs, stories, and identities that hold you back from becoming a movement leader." },
+    { icon: Users, title: "Cultivate Connections", description: "I provide frameworks for building genuine human connections and increasing your influence, moving up in social space and communication." },
+    { icon: TrendingUp, title: "Create Community", description: "I show you how to build communities that transform lives, helping you become the movement you were created to be." }
   ];
 
   return (
     <section className="py-24 sm:py-32 px-6 bg-white">
       <div className="max-w-5xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-5xl font-light tracking-tight text-gray-900 mb-4">How Denis Helps</h2>
+          <h2 className="text-3xl md:text-5xl font-light tracking-tight text-gray-900 mb-4">The Movement Framework™</h2>
           <p className="text-lg text-gray-600 leading-relaxed font-light">
-            Denis runs companies at the front edge of AI, but his focus is always on people. He teaches practical ways to use technology without losing yourself.
+            Through my company Movement Leader, I train you to increase your influence, income, and impact. It's not just inspirational or aspirational—it's deeply transformational, teaching you to confront conflict, cultivate connections, create community, and communicate your story.
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
@@ -45,9 +45,9 @@ export default function WhatIDoSection() {
           transition={{ delay: 0.4 }}
         >
           <p className="text-xl md:text-2xl font-light leading-relaxed">
-            Bottom line: If you anchor who you are and learn to move with wisdom,{' '}
+            Bottom line: When you confront conflict, cultivate connections, create community, and communicate your story,{' '}
             <span style={{ color: '#95bbc2' }} className="font-medium">
-              you become unstoppable.
+              you become the movement you were created to be.
             </span>
           </p>
         </motion.div>
